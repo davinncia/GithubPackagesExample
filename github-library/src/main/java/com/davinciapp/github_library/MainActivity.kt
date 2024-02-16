@@ -1,4 +1,4 @@
-package com.davinciapp.githubpackagesexample
+package com.davinciapp.github_library
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,15 +10,24 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.davinciapp.github_library.PrintGithubPackage
-import com.davinciapp.githubpackagesexample.ui.theme.GithubPackagesExampleTheme
+import com.davinciapp.github_library.ui.theme.GithubPackagesExampleTheme
 
-class MainActivity : ComponentActivity() {
+internal class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            PrintGithubPackage(name = "yolo")
+
         }
+
     }
 }
 
+@Composable
+fun PrintGithubPackage(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Github package says $name!",
+        modifier = modifier
+    )
+}
+
+val library = "lin"

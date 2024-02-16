@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.davinciapp.githubpackagesexample"
+    namespace = "com.davinciapp.github_library"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.davinciapp.githubpackagesexample"
+        applicationId = "com.davinciapp.github_library"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -27,7 +27,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -51,7 +50,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":github-library"))
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")

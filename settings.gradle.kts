@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "GithubPackagesExample"
 include(":app")
+include(":github-library")
