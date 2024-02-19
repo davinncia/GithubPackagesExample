@@ -12,7 +12,6 @@ publishing {
             credentials {
                 username = "davinncia"
                 password = System.getenv("GITHUB_TOKEN")
-//                password = ""
             }
         }
     }
