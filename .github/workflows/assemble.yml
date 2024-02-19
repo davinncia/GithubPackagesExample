@@ -1,14 +1,9 @@
-name: Publish package to GitHub Packages
-#on:
-#  release:
-#    types: [created]
+name: Assemble app
 on: [push]
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
@@ -21,9 +16,4 @@ jobs:
         uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
 
       - name: Build project
-        run: ./gradlew github-library:assemble
-
-      - name: Publish package
-        run: ./gradlew publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+        run: ./gradlew app:assemble

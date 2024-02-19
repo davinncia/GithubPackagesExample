@@ -12,6 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
         maven {
             url = uri("https://maven.pkg.github.com/davinncia/GithubPackagesExample")
+
         }
     }
 }
