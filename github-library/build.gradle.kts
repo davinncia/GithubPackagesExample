@@ -1,6 +1,29 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    `maven-publish`
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/davinncia/GithubPackagesExample")
+            credentials {
+                username = "davinncia"
+//                password = ""
+            }
+        }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            groupId = "com.davinciapp.github_library"
+            artifactId = "sdk"
+            version = "1.0.1"
+
+            artifact("$buildDir/outputs/aar/github-library-release.aar")
+        }
+    }
 }
 
 android {
@@ -8,11 +31,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.davinciapp.github_library"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -27,6 +46,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {

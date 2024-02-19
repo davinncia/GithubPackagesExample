@@ -29,5 +29,3 @@ fun PrintGithubPackage(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
     )
 }
-
-val library = "lin"
