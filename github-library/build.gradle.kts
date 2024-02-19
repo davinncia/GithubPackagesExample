@@ -19,7 +19,7 @@ publishing {
         register<MavenPublication>("gpr") {
             groupId = "com.davinciapp.github_library"
             artifactId = "sdk"
-            version = "1.0.1"
+            version = "1.0.2"
 
             artifact("$buildDir/outputs/aar/github-library-release.aar")
         }
