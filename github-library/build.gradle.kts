@@ -11,6 +11,7 @@ publishing {
             url = uri("https://maven.pkg.github.com/davinncia/GithubPackagesExample")
             credentials {
                 username = "davinncia"
+                password = System.getenv("PACKAGE_TOKEN")
 //                password = ""
             }
         }
