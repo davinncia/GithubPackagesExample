@@ -8,7 +8,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/davinncia/GithubPackagesExample")
+            url = uri("https://maven.pkg.github.com/davinncia/PackageDelivery")
             credentials {
                 username = "davinncia"
                 password = System.getenv("GITHUB_TOKEN")
@@ -17,9 +17,9 @@ publishing {
     }
     publications {
         register<MavenPublication>("gpr") {
-            groupId = "com.davinciapp.github_library"
+            groupId = "com.davinciapp.fine-token"
             artifactId = "sdk"
-            version = "1.0.2"
+            version = "1.2"
 
             artifact("$buildDir/outputs/aar/github-library-release.aar")
         }
