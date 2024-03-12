@@ -1,6 +1,8 @@
 name: Publish package to GitHub Packages
 
-on: [push]
+on:
+  release:
+    types: [published]
 
 jobs:
   publish:
@@ -25,4 +27,5 @@ jobs:
       - name: Publish package
         run: ./gradlew publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+          VERSION_NAME: ${{ github.event.release.tag_name }}
